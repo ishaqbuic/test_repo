@@ -10,21 +10,21 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Perform build steps here
+                echo 'Building...'
             }
         }
         
         stage('Test') {
             steps {
-                // Perform test steps here
+                echo 'Building...'
             }
         }
         
         stage('Deploy') {
             steps {
-                // Perform deployment steps here
+                echo 'Building...'
                 script {
-                    // Push changes to GitHub
+                    echo 'pushing...'
                     gitPushToGitHub()
                 }
             }
