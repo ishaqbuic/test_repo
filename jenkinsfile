@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'ishaq-gitlab', url: 'https://gitlab.com/devops2771812/repo_push_test.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Perform build steps here
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Perform test steps here
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Perform deployment steps here
+                script {
+                    // Push changes to GitHub
+                    gitPushToGitHub()
+                }
+            }
+        }
+    }
+}
+
+def gitPushToGitHub() {
+    withCredentials([usernamePassword(credentialsId: 'ishaq-github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        sh "git config --global user.email 'ishaqbuic@gmail.com'"
+        sh "git config --global user.name 'ishaq'"
+        sh "git add ."
+        sh "git commit -m 'updated commit from gitlab to github'"
+        sh "git push https://$USERNAME:$PASSWORD@github.com/ishaqbuic/test_repo.git main"
+    }
+}
