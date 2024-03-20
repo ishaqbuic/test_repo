@@ -1,17 +1,4 @@
-stages:
-  - build
-  - test
-  - deploy
 
-job:
-  stage: build
-  script:
-    - echo "Building..."
-
-test:
-  stage: test
-  script:
-    - echo "Running tests..."
 
 deploy:
   stage: deploy
