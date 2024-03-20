@@ -1,0 +1,31 @@
+deploy:
+  stage: deploy
+  script:
+    - |
+      set -e
+      echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
+      echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
+      
+      # Configure Git user
+      git config --local user.email "ishaqbuic.com"
+      git config --local user.name "ishaq"
+
+      # Add GitHub repository as remote
+      git remote add origin https://github.com/ishaqbuic/test_repo.git
+
+      # Checkout production branch
+      git checkout production
+
+      # Pull latest changes from origin and GitHub
+      git pull origin production
+      git pull origin production
+
+      # Display current status
+      git status
+
+      # Commit and push changes to GitHub
+      git add .
+      git commit -m "Auto push from GitLab CI/CD pipeline - Production"
+      git push origin production:main
+  only:
+    - production
