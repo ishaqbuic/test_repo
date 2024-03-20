@@ -34,10 +34,11 @@ deploy:
       fi
 
       # Checkout production branch
-      git checkout -B production origin/production
+      git checkout -B production 
 
       # Pull latest changes from origin
       git pull origin production
+      git pull github production
 
       # Display current status
       git status
