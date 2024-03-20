@@ -17,9 +17,9 @@ deploy:
   stage: deploy
   script:
     - |
-      #set -e
-      #echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
-      #echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
+      set -e
+      echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
+      echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
       
       # Configure Git user
       git config --local user.email "ishaqbuic@gmail.com.com" # Use your GitHub email here
