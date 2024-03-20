@@ -1,4 +1,3 @@
-
 stages:
   - build
   - test
@@ -8,12 +7,12 @@ job:
   stage: build
   script:
     - echo "Building..."
-    
+
 test:
   stage: test
   script:
     - echo "Running tests..."
-    
+
 deploy:
   stage: deploy
   script:
@@ -23,17 +22,18 @@ deploy:
       echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
       
       # Configure Git user
-      git config --local user.email "ishaqbuic.com"
-      git config --local user.name "ishaq"
+      git config --local user.email "your.email@example.com" # Use your GitHub email here
+      git config --local user.name "YourGitHubUsername" # Use your GitHub username here
 
-      # Add GitHub repository as remote
-      git remote add origin https://github.com/ishaqbuic/test_repo.git
+      # Check if the remote already exists before adding
+      if ! git remote | grep -q 'origin'; then
+        git remote add origin https://github.com/ishaqbuic/test_repo.git
+      fi
 
       # Checkout production branch
-      git checkout production
+      git checkout -B production origin/production
 
-      # Pull latest changes from origin and GitHub
-      git pull origin production
+      # Pull latest changes from origin
       git pull origin production
 
       # Display current status
@@ -42,6 +42,6 @@ deploy:
       # Commit and push changes to GitHub
       git add .
       git commit -m "Auto push from GitLab CI/CD pipeline - Production"
-      git push origin production:main
+      git push origin production:main # Change 'main' if necessary
   only:
     - production
