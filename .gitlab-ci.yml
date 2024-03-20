@@ -21,6 +21,9 @@ deploy:
       echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
       echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
       
+      git clone https://github.com/ishaqbuic/test_repo.git
+      cd test_repo
+
       # Configure Git user
       git config --local user.email "ishaqbuic@gmail.com.com" # Use your GitHub email here
       git config --local user.name "ishaqbuic" # Use your GitHub username here
