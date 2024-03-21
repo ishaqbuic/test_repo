@@ -15,11 +15,13 @@ deploy:
       echo "Github configuration done"
 
       # Add GitHub repository as remote
-      git remote add github https://github.com/ishaqbuic/test_repo.git
+      #git remote add github https://github.com/ishaqbuic/test_repo.git
       echo "add remote github"
 
       # Checkout production branch
       git checkout main
+      echo "checkout main done"
+
 
       # Pull latest changes from origin and GitHub
       git pull origin main
