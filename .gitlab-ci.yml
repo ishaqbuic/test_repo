@@ -25,7 +25,7 @@ deploy:
       git pull origin production
       git pull github production
 
-      # Display current status ###
+      # Display current status
       git status
 
       # Commit and push changes to GitHub
