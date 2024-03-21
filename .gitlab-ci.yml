@@ -3,11 +3,12 @@ deploy:
   script:
     - >
       # Clone GitHub repository
+      echo "cloning repo"
       git clone https://github.com/ishaqbuic/test_repo.git
       cd test_repo
       pwd
       ls
-      echo "Cloning repository"
+      echo "Cloning done"
       # Configure Git user
       git config --local user.email "ishaqbuic@gmail.com" # Fix the typo here
       git config --local user.name "ishaqbuic" # Use your GitHub username here
