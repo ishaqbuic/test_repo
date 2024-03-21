@@ -8,6 +8,7 @@ push_to_github:
     - git config --local user.name "ishaqbuic" # Use your GitHub username here
 
     - git remote add github https://github.com/ishaqbuic/test_repo.git
+    - echo "machine github.com login ishaqbuic password $GITHUB_TOKEN" > ~/.netrc
     - git push github $CI_COMMIT_SHA:refs/heads/main
   only:
     - main
