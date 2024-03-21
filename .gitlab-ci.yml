@@ -1,5 +1,4 @@
 
-
 deploy:
   stage: deploy
   script:
@@ -8,6 +7,7 @@ deploy:
       echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
       echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
       
+      # Clone GitHub repository
       git clone https://github.com/ishaqbuic/test_repo.git
       cd test_repo
 
@@ -15,15 +15,14 @@ deploy:
       git config --local user.email "ishaqbuic@gmail.com.com" # Use your GitHub email here
       git config --local user.name "ishaqbuic" # Use your GitHub username here
 
-      # Check if the remote already exists before adding
-      if ! git remote | grep -q 'origin'; then
-        git remote add origin https://github.com/ishaqbuic/test_repo.git
-      fi
+
+      # Add GitHub repository as remote
+      git remote add github https://github.com/ishaqbuic/test_repo.git
 
       # Checkout production branch
-      git checkout -B production 
+      git checkout production
 
-      # Pull latest changes from origin
+      # Pull latest changes from origin and GitHub
       git pull origin production
       git pull github production
 
@@ -33,6 +32,7 @@ deploy:
       # Commit and push changes to GitHub
       git add .
       git commit -m "Auto push from GitLab CI/CD pipeline - Production"
-      git push origin production:main # Change 'main' if necessary
+      git push github production:main
   only:
-    - production
+    - production    
+      
