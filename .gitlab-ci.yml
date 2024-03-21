@@ -3,8 +3,8 @@ deploy:
   script:
     - >
       # Clone GitHub repository
-      #git clone https://github.com/ishaqbuic/test_repo.git
-      #cd test_repo
+      git clone https://github.com/ishaqbuic/test_repo.git
+      cd test_repo
 
       echo "Cloning repository"
       # Configure Git user
@@ -14,23 +14,23 @@ deploy:
       echo "Github configuration done"
 
       # Add GitHub repository as remote
-      #git remote add github https://github.com/ishaqbuic/test_repo.git # Uncomment this line
+      git remote add github https://github.com/ishaqbuic/test_repo.git # Uncomment this line
 
-      # Checkout production branch
-      #git checkout main
-      #echo "checkout main done"
+      # Checkout main branch
+      git checkout main
+      echo "checkout main done"
 
       #Pull latest changes from origin and GitHub
-      #git pull origin main
-      #git pull github main # Make sure the branch name is correct here
-      #echo "pull done"
+      git pull origin main
+      git pull github main # Make sure the branch name is correct here
+      echo "pull done"
 
       # Display current status
       git status
 
       # Commit and push changes to GitHub
       git add .
-      git commit -m "Auto push from GitLab CI/CD pipeline - Production"
+      git commit -m "Auto push from GitLab CI/CD pipeline - main"
       git push github main # Simplify the push command
       echo "push done"
   only:
