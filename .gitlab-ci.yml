@@ -3,8 +3,8 @@ deploy:
   script:
     - >
       # Clone GitHub repository
-      git clone https://github.com/ishaqbuic/test_repo.git
-      cd test_repo
+      #git clone https://github.com/ishaqbuic/test_repo.git
+      #cd test_repo
 
       echo "Cloning repository"
       # Configure Git user
@@ -20,10 +20,10 @@ deploy:
       git checkout main
       echo "checkout main done"
 
-      # Pull latest changes from origin and GitHub
-      git pull origin main
-      git pull github main # Make sure the branch name is correct here
-      echo "pull done"
+      #Pull latest changes from origin and GitHub
+      #git pull origin main
+      #git pull github main # Make sure the branch name is correct here
+      #echo "pull done"
 
       # Display current status
       git status
