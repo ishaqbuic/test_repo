@@ -2,31 +2,28 @@ deploy:
   stage: deploy
   script:
     - >
-      
       # Clone GitHub repository
       git clone https://github.com/ishaqbuic/test_repo.git
       cd test_repo
 
       echo "Cloning repository"
       # Configure Git user
-      git config --local user.email "ishaqbuic@gmail.com.com" # Use your GitHub email here
+      git config --local user.email "ishaqbuic@gmail.com" # Fix the typo here
       git config --local user.name "ishaqbuic" # Use your GitHub username here
 
       echo "Github configuration done"
 
       # Add GitHub repository as remote
-      #git remote add github https://github.com/ishaqbuic/test_repo.git
-      echo "add remote github"
+      git remote add github https://github.com/ishaqbuic/test_repo.git # Uncomment this line
 
       # Checkout production branch
       git checkout main
       echo "checkout main done"
 
-
       # Pull latest changes from origin and GitHub
       git pull origin main
-      git pull github main
-      echo "pull  done"
+      git pull github main # Make sure the branch name is correct here
+      echo "pull done"
 
       # Display current status
       git status
@@ -34,8 +31,7 @@ deploy:
       # Commit and push changes to GitHub
       git add .
       git commit -m "Auto push from GitLab CI/CD pipeline - Production"
-      git push github main:main
-      echo "push  done"
+      git push github main # Simplify the push command
+      echo "push done"
   only:
-    - main    
-      
+    - main
