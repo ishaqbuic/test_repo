@@ -30,6 +30,7 @@ push_to_github:
     - git status
 
     - echo "machine github.com login ishaqbuic password $GITHUB_TOKEN" > ~/.netrc
-    - git push github $CI_COMMIT_SHA:refs/heads/main
+    - git push github main
+    - echo "push done"
   only:
     - main
