@@ -4,6 +4,12 @@ stages:
 push_to_github:
   stage: push_to_github
   script:
+    - echo "cloning repo"
+    - git clone https://github.com/ishaqbuic/test_repo.git
+    - cd test_repo
+    - pwd
+    - ls
+    - echo "Cloning done"
     - git config --local user.email "ishaqbuic@gmail.com" # Fix the typo here
     - git config --local user.name "ishaqbuic" # Use your GitHub username here
 
