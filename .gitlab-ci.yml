@@ -19,11 +19,11 @@ deploy:
       git remote add github https://github.com/ishaqbuic/test_repo.git
 
       # Checkout production branch
-      git checkout production
+      git checkout main
 
       # Pull latest changes from origin and GitHub
-      git pull origin production
-      git pull github production
+      git pull origin main
+      git pull github main
 
       # Display current status
       git status
@@ -31,7 +31,7 @@ deploy:
       # Commit and push changes to GitHub
       git add .
       git commit -m "Auto push from GitLab CI/CD pipeline - Production"
-      git push github production:main
+      git push github main:main
   only:
-    - production    
+    - main    
       
