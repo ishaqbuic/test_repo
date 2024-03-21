@@ -2,9 +2,6 @@ deploy:
   stage: deploy
   script:
     - >
-      set -e
-      echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
-      echo "CI_JOB_TOKEN: $CI_JOB_TOKEN"
       
       # Clone GitHub repository
       git clone https://github.com/ishaqbuic/test_repo.git
