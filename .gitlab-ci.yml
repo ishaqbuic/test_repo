@@ -15,12 +15,14 @@ push_to_github:
     - echo "Github configuration done"
 
      # Add GitHub repository as remote
-    - git remote add github https://github.com/ishaqbuic/test_repo.git # Uncomment this line
+    - git remote add github https://github.com/ishaqbuic/test_repo.git 
     - echo "Github remote add done"
     # Checkout main branch
     - git checkout main
     - echo "checkout main done"
-      
+    
+    - git fetch gitlab
+    - git merge gitlab/main
        #Pull latest changes from origin and GitHub
     - git pull -f origin main
     - git pull github main # Make sure the branch name is correct here
