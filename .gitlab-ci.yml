@@ -21,8 +21,6 @@ push_to_github:
     - git checkout main
     - echo "checkout main done"
     
-    - git fetch gitlab
-    - git merge gitlab/main
        #Pull latest changes from origin and GitHub
     - git pull -f origin main
     - git pull github main # Make sure the branch name is correct here
