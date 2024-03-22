@@ -22,7 +22,7 @@ push_to_github:
     - echo "checkout main done"
     
        #Pull latest changes from origin and GitHub
-    - git pull -f origin main
+    - git pull origin main
     - git pull github main # Make sure the branch name is correct here
     - echo "pull done"
 
