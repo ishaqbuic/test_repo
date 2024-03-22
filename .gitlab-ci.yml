@@ -6,7 +6,6 @@ push_to_github:
   script:
     - echo "cloning repo"
     - git clone https://github.com/ishaqbuic/test_repo.git
-    - cd test_repo
     - pwd
     - ls
     - echo "Cloning done"
@@ -18,13 +17,13 @@ push_to_github:
     - git remote add github https://github.com/ishaqbuic/test_repo.git 
     - echo "Github remote add done"
     # Checkout main branch
-    - git checkout main
-    - echo "checkout main done"
+    - git checkout origin main
+    - echo "checkout origin main done"
     
        #Pull latest changes from origin and GitHub
     - git pull origin main
-    - git pull github main # Make sure the branch name is correct here
-    - echo "pull done"
+    - git push github main # Make sure the branch name is correct here
+    - echo "push done"
 
   # Display current status
     - git status
