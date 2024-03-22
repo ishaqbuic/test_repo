@@ -21,7 +21,7 @@ push_to_github:
     - echo "checkout origin main done"
     
        #Pull latest changes from origin and GitHub
-    - git pull main
+    - git pull origin main
     - git push github main # Make sure the branch name is correct here
     - echo "push done"
 
