@@ -17,11 +17,11 @@ push_to_github:
     - git remote add github https://github.com/ishaqbuic/test_repo.git 
     - echo "Github remote add done"
     # Checkout main branch
-    - git checkout origin main
+    - git checkout main
     - echo "checkout origin main done"
     
        #Pull latest changes from origin and GitHub
-    - git pull origin main
+    - git pull origin/main
     - git push github main # Make sure the branch name is correct here
     - echo "push done"
 
