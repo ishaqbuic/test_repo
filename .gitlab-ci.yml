@@ -22,7 +22,7 @@ push_to_github:
     
        #Pull latest changes from origin and GitHub
     - git pull origin main
-    - git push github main --force # Make sure the branch name is correct here
+    - git push github main # Make sure the branch name is correct here
     - echo "push done"
  
   only:
