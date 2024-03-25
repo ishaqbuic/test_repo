@@ -22,7 +22,7 @@ push_to_github:
        #Pull latest changes from origin and GitHub
     - git pull origin main
     - echo "machine github.com login ishaqbuic password $GITHUB_TOKEN" > ~/.netrc
-    - git push github main
+    - git push -f github main 
     - echo "push done"
   only:
     - main
