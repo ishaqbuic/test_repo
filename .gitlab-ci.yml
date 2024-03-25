@@ -20,6 +20,9 @@ push_to_github:
     - git checkout main
     - echo "checkout origin main done"
        #Pull latest changes from origin and GitHub
+    
+    - echo "machine github.com login ishaqbuic password $GITHUB_TOKEN" > ~/.netrc
+
     - git pull origin main
     - git push github main
  # Make sure the branch name is correct here
