@@ -21,7 +21,8 @@ push_to_github:
     - echo "checkout origin main done"
        #Pull latest changes from origin and GitHub
     - git pull origin main
-    - git push github main
+    - git push https://ishaqbuic@github.com/ishaqbuic/test_repo.git main
+
  # Make sure the branch name is correct here
     - echo "push done"
  
