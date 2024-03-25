@@ -5,7 +5,7 @@ push_to_github:
   stage: push_to_github
   script:
     - echo "cloning repo"
-    - git clone git@github.com:ishaqbuic/test_repo.git
+    - git clone https://ishaqbuic@github.com/ishaqbuic/test_repo.git 
     - pwd
     - ls
     - echo "Cloning done"
@@ -14,16 +14,14 @@ push_to_github:
     - echo "Github configuration done"
 
      # Add GitHub repository as remote    
-    - git remote add github git@github.com:ishaqbuic/test_repo.git    
+    - git remote add github https://ishaqbuic@github.com/ishaqbuic/test_repo.git    
     - echo "Github remote add done"
     # Checkout main branch
     - git checkout main
     - echo "checkout origin main done"
-
        #Pull latest changes from origin and GitHub
     - git pull origin main
     - git push github main
-
  # Make sure the branch name is correct here
     - echo "push done"
  
