@@ -14,7 +14,7 @@ push_to_github:
     - echo "Github configuration done"
 
      # Add GitHub repository as remote    
-    - git remote add github https://github.com/ishaqbuic/test_repo.git    
+    - git remote add github https://ishaqbuic@github.com/ishaqbuic/test_repo.git    
     - echo "Github remote add done"
     # Checkout main branch
     - git checkout main
