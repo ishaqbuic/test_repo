@@ -24,6 +24,5 @@ push_to_github:
     - git push github main
  # Make sure the branch name is correct here
     - echo "push done"
- 
   only:
     - main
