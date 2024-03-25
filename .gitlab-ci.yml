@@ -13,7 +13,9 @@ push_to_github:
     - git config --local user.name "ishaqbuic" # Use your GitHub username here
     - echo "Github configuration done"
 
-     # Add GitHub repository as remote    - echo "Github remote add done"
+     # Add GitHub repository as remote    
+    - git remote add github https://github.com/ishaqbuic/test_repo.git    
+    - echo "Github remote add done"
     # Checkout main branch
     - git checkout main
     - echo "checkout origin main done"
