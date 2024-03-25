@@ -5,7 +5,7 @@ push_to_github:
   stage: push_to_github
   script:
     - echo "cloning repo"
-    - git clone https://github.com/ishaqbuic/test_repo.git
+    - git clone https://ishaqbuic@github.com/ishaqbuic/test_repo.git 
     - pwd
     - ls
     - echo "Cloning done"
