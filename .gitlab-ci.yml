@@ -8,8 +8,7 @@ push_to_github:
   #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
   #  - echo "gitlab cloning done"
    # - cd repo_push_test
-   # - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
-   # - cd test_repo  # Change directory to the cloned repository
+    - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
     - git config --local user.email "ishaqbuic@gmail.com"
     - git config --local user.name "ishaqbuic"
    # - echo "Github configuration done"
@@ -18,7 +17,6 @@ push_to_github:
     - git checkout main
     - echo "Checkout origin main done"
     - git pull origin main
-    - git pull github main
     - git push github main  # Push changes to GitHub using the token
     - echo "Push done"
   only:
