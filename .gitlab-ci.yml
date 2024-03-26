@@ -4,14 +4,14 @@ stages:
 push_to_github:
   stage: push_to_github
   script:
-    - echo "Cloning repo"
-    - git clone https://gitlab.com/devops2771812/repo_push_test.git
-    - echo "gitlab cloning done"
-    - cd repo_push_test
+  #  - echo "Cloning repo"
+  #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
+  #  - echo "gitlab cloning done"
+   # - cd repo_push_test
    # - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
    # - cd test_repo  # Change directory to the cloned repository
-   # - git config --local user.email "ishaqbuic@gmail.com"
-   # - git config --local user.name "ishaqbuic"
+    - git config --local user.email "ishaqbuic@gmail.com"
+    - git config --local user.name "ishaqbuic"
    # - echo "Github configuration done"
     - git remote add github https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git
     - echo "Github remote add done"
