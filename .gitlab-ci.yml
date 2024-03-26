@@ -24,8 +24,8 @@ push_to_github:
     - git checkout main
     - echo "Checkout origin main done"
 
-    - git pull origin main
-    - git pull github main  
+    - git pull --verbose origin main
+    - git pull --verbose github main  
     - git add .
     - git commit -m "push from gitlab" 
 
