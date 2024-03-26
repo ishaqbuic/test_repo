@@ -4,25 +4,18 @@ stages:
 push_to_github:
   stage: push_to_github
   script:
-    - echo "cloning repo"
-    - git clone git@github.com:ishaqbuic/test_repo.git
-    - pwd
-    - ls
-    - echo "Cloning done"
-    - git config --local user.email "ishaqbuic@gmail.com" # Fix the typo here
-    - git config --local user.name "ishaqbuic" # Use your GitHub username here
+    - echo "Cloning repo"
+    - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
+    - cd test_repo  # Change directory to the cloned repository
+    - git config --local user.email "ishaqbuic@gmail.com"
+    - git config --local user.name "ishaqbuic"
     - echo "Github configuration done"
-
-     # Add GitHub repository as remote    
-    - git remote add git@github.com:ishaqbuic/test_repo.git 
+    - git remote add github https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git
     - echo "Github remote add done"
-    # Checkout main branch
     - git checkout main
-    - echo "checkout origin main done"
-       #Pull latest changes from origin and GitHub
+    - echo "Checkout origin main done"
     - git pull origin main
- #   - echo "machine github.com login ishaqbuic password $GITHUB_TOKEN" > ~/.netrc
-    - git push github main 
-    - echo "push done"
+    - git push github main  # Push changes to GitHub using the token
+    - echo "Push done"
   only:
     - main
