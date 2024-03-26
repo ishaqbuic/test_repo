@@ -11,8 +11,8 @@ push_to_github:
      
     - pwd 
     - ls
-    - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
-    - cd test_repo
+  #  - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
+   # - cd test_repo
     
     - git config --local user.email "ishaqbuic@gmail.com"
     - git config --local user.name "ishaqbuic"
@@ -24,9 +24,9 @@ push_to_github:
     - git checkout main
     - echo "Checkout origin main done"
 
-    - git fetch origin main
-
     - git pull origin main
+    - git add .
+    - git commit -m "push from gitlab" 
 
     - git push github main  # Push changes to GitHub using the token
     - echo "Push done"
