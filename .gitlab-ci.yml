@@ -8,7 +8,9 @@ push_to_github:
   #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
   #  - echo "gitlab cloning done"
   #  - cd repo_push_test
-   
+     
+    - pwd 
+    - ls
     - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
     - cd test_repo
     
