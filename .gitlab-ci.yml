@@ -25,10 +25,11 @@ push_to_github:
     - echo "Checkout origin main done"
 
     - git pull --verbose origin main
+    - pwd
     - git pull --verbose github main  
     - git add .
     - git commit -m "push from gitlab" 
-
+    - pwd
     - git push github main  # Push changes to GitHub using the token
     - echo "Push done"
   only:
