@@ -19,7 +19,7 @@ push_to_github:
     - echo "Checkout origin main done"
     - git fetch origin main
     - git pull origin main
-    - git push github main  # Push changes to GitHub using the token
+    - git push --mirror github main  # Push changes to GitHub using the token
     - echo "Push done"
   only:
     - main
