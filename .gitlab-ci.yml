@@ -11,8 +11,8 @@ push_to_github:
      
     - pwd 
     - ls
-  #  - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
-   # - cd test_repo
+    - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
+    - cd test_repo
     
     - git config --local user.email "ishaqbuic@gmail.com"
     - git config --local user.name "ishaqbuic"
@@ -25,6 +25,7 @@ push_to_github:
     - echo "Checkout origin main done"
 
     - git pull origin main
+   
     - git add .
     - git commit -m "push from gitlab" 
 
