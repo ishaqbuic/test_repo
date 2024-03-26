@@ -7,8 +7,9 @@ push_to_github:
   #  - echo "Cloning repo"
   #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
   #  - echo "gitlab cloning done"
-   # - cd repo_push_test
+  #  - cd repo_push_test
     - git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
+    - cd test_repo
     - git config --local user.email "ishaqbuic@gmail.com"
     - git config --local user.name "ishaqbuic"
    # - echo "Github configuration done"
