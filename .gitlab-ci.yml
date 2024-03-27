@@ -27,7 +27,7 @@ push_to_github:
     - git add .
     - git commit -m "push from gitlab" 
 
-    - git push github main  # Push changes to GitHub using the token
+    - git push github main 
     - echo "Push done"
   only:
     - main
