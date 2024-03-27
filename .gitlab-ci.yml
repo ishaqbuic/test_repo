@@ -24,13 +24,13 @@ push_to_github:
     - git checkout main
     - echo "Checkout origin main done"
     - git branch
-    - git pull origin main
+    - git pull origin main --force
    # - git pull github main
   
     - git add .
     - git commit -m "push from gitlab" 
 
-    - git push github main  # Push changes to GitHub using the token
+    - git push github main --force # Push changes to GitHub using the token
     - echo "Push done"
   only:
     - main
