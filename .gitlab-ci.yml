@@ -8,7 +8,9 @@ push_to_github:
   #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
   #  - echo "gitlab cloning done"
   #  - cd repo_push_test
-     
+    - set -x
+    - ping -c 4 github.com  # Ping GitHub to check connectivity
+    - curl -I https://github.com  # Send a simple HTTP request to GitHub
     - pwd 
     - ls
    
