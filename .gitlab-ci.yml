@@ -18,7 +18,7 @@ push_to_github:
     - git config --local user.name "ishaqbuic"
     - echo "Github configuration done"
 
-    - git remote add github https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git
+    - git remote add github https://ishaqbuic@github.com/ishaqbuic/test_repo.git
     - echo "Github remote add done"
 
     - git checkout main
