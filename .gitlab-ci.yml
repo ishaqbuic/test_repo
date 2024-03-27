@@ -8,12 +8,6 @@ push_to_github:
   #  - git clone https://gitlab.com/devops2771812/repo_push_test.git
   #  - echo "gitlab cloning done"
   #  - cd repo_push_test
-    - set -x
-    - apt-get update && apt-get install -y iputils-ping  # Install ping
-    - /bin/ping -c 4 github.com  # Ping GitHub to check connectivity
-    - curl -I https://github.com  # Send a simple HTTP request to GitHub
-    - echo "$PATH"  # Print the current PATH variable
-    - which ping    # Print the location of the ping command
     - pwd 
     - ls
    
@@ -24,7 +18,7 @@ push_to_github:
     - git config --local user.name "ishaqbuic"
     - echo "Github configuration done"
 
-    - git remote add github git@gitlab.com:devops2771812/repo_push_test.git
+    - git remote add github https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git
     - echo "Github remote add done"
 
     - git checkout main
