@@ -11,8 +11,6 @@ push_to_github:
     - pwd 
     - ls
    
-    #- git clone https://ishaqbuic:$GITHUB_TOKEN@github.com/ishaqbuic/test_repo.git 
-    #- cd test_repo
     
     - git config --local user.email "ishaqbuic@gmail.com"
     - git config --local user.name "ishaqbuic"
